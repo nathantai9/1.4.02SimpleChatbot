@@ -5,7 +5,14 @@ let textY = 30;
 const dictionary = {
   hello: "Hello there, how are you today?",
   hi: "Hi, how are you?",
-  default: "I see.",
+  default: "I see. Please tell me more.",
+  weather: "The weather is great today.",
+  food: "I love pizza.",
+  movie: "I like sci-fi movies.",
+  music: "I enjoy listening to jazz.",
+  sport: "Soccer is a fun sport to watch.",
+  hobby: "I like painting in my free time.",
+  travel: "Traveling opens your mind to new cultures."
 }
 
 function setup() {
@@ -94,6 +101,8 @@ function buildReply(message){
 
 // Define a function named sendMessage, responsible for handling chat input/output
 function sendMessage(){
+  // Set the color of the human's text to blue
+  fill(0, 0, 255); // Human text color (blue)
   // Set the text size for the messages
   textSize(24); // Reasonable text size
   // If the textY is too low
@@ -116,7 +125,7 @@ function sendMessage(){
   // Align text to the left for displaying the bot’s reply
   textAlign(LEFT)
   // Set the fill color for the bot's reply
-  fill(0); // Bot reply color (black)
+  fill(255, 0, 0); // Bot reply color (red)
   // Draw the chatbot’s reply text at the left side of the canvas at the current Y position
   text(buildReply(userMessage), 20, textY); // Near left edge
   // Move the text position downward for the next message/reply
